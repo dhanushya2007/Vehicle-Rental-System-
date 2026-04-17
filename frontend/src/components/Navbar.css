@@ -1,0 +1,125 @@
+.navbar {
+  background: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.navbar-brand {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--primary);
+  text-decoration: none;
+  letter-spacing: -0.5px;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.navbar-links a {
+  padding: 8px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--gray);
+  font-weight: 500;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.navbar-links a:hover,
+.navbar-links a.active {
+  background: var(--light);
+  color: var(--primary);
+}
+
+/* Admin Dropdown — click based */
+.admin-dropdown {
+  position: relative;
+}
+
+.admin-dropdown-trigger {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: none;
+  background: none;
+  color: var(--gray);
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+}
+
+.admin-dropdown-trigger:hover,
+.admin-dropdown-trigger.active {
+  background: var(--light);
+  color: var(--primary);
+}
+
+.admin-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  min-width: 210px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  z-index: 999;
+  animation: dropIn 0.15s ease;
+}
+
+@keyframes dropIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.admin-dropdown-menu a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 18px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--dark);
+  text-decoration: none;
+  transition: background 0.15s;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.admin-dropdown-menu a:last-child { border-bottom: none; }
+
+.admin-dropdown-menu a:hover {
+  background: #eff6ff;
+  color: var(--primary);
+}
+
+/* Auth */
+.navbar-auth {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar-user {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--dark);
+}
+
+@media (max-width: 768px) {
+  .navbar-links { display: none; }
+  .navbar-user  { display: none; }
+}
